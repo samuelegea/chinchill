@@ -45,8 +45,6 @@ ActiveRecord::Schema.define(version: 2021_05_20_181257) do
     t.string "name"
     t.text "description"
     t.integer "price"
-    t.string "nut_info_text", array: true
-    t.string "nut_info_quantity", array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
