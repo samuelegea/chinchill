@@ -23,13 +23,23 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem "react_on_rails", "= 12.2"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+# work with postgresql
 gem 'pg'
+# devise for user authentication
 gem 'devise'
-gem "react_on_rails", "= 12.2"
-
+# bootstrap for frontend
+gem 'bootstrap-sass'
+gem 'bootstrap',  '~>4.3.1'
+# active admin for admin area
 gem 'activeadmin'
+# font awesome
+gem 'font_awesome5_rails'
+# inline svg to work with svgs
+gem 'inline_svg'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -57,3 +67,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'mini_racer', platforms: :ruby

@@ -1,1 +1,145 @@
-<%= javascript_pack_tag 'hello_react' %>
+<% content_for :content do %>
+    <style>
+        .info-card{
+            background-color: white;
+            border: 1px solid;
+            box-shadow: 10px 10px 10px gray;
+            border-radius: 20px;
+            text-align: center;
+            align-items: stretch;
+            height: 100%;
+        }
+        .absolute{
+            position: absolute;
+            margin-top: 50px;            
+        }
+        .text-align-center{
+            text-align: center;
+        }
+        .call-to-action{
+            text-decoration: none;
+            font-size: large;
+            font-weight: bold;
+            color: #000;
+        }
+        footer{
+            height: 300px;
+            background-color: #000;
+            position:absolute;
+            left:0;
+            right:0;
+        }
+        .container-footer{
+            color: #fff;
+        }
+    </style>
+    
+    <div class="row mt-5">
+        <div class="col-md-6 justify-content-center d-flex">
+            <%= inline_svg_tag("chinchilla.svg", options={width: 300}) %>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-center mt-5 mt-md-0">
+            <div class="d-block">
+                <h2 class="w-100">A ração gourmet para sua chinchila</h2>
+                <p>
+                    O melhor que seu Pet pode saborerar, feito e aprovado por nutricionistas e veterinários!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4 my-2">
+            <div class="info-card p-3">
+                <div class="d-flex w-100 justify-content-center mb-2">
+                    <%= inline_svg_tag("gourmet.svg", size: '40% * 40%') %>
+
+                </div>
+                    <p>
+                        O que há de mais adequado e exclusivo para sua chinchila em termos de alimentos
+                    </p>
+            </div>
+        </div>
+
+        <div class="col-md-4 my-2">
+            <div class="info-card p-3">
+                <div class="d-flex w-100 justify-content-center mb-2">
+                    <%= inline_svg_tag("chef.svg", size: '40% * 40%') %>
+                </div>
+                    <p>
+                        Receita criada por chefes amantes de Chinchilas, aprovado por veterinários especialistas
+                    </p>
+            </div>
+        </div>
+
+        <div class="col-md-4 my-2">
+            <div class="info-card p-3">
+                <div class="d-flex w-100 justify-content-center mb-2">
+                    <%= inline_svg_tag("premium.svg", size: '40% * 40%') %>
+
+                </div>
+                    <p>
+                        O que há de mais exclusivo no ramo dos Roedores dos Andes
+                    </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6 order-md-2 d-flex justify-content-center">
+            <%= inline_svg_tag("Rectangle 6.svg", size: '400  * 400') %>
+
+            <%= inline_svg_tag("dog-food 2.svg", size: '40% * 40%', class: "absolute") %>
+        </div>
+        <div class="col-md-6 order-md-1">
+            <h3>Variedade</h3>
+            <p>
+                Diversos produtos e sabores para escolher, apenas o melhor chega até você
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6 d-flex justify-content-center">
+            <%= inline_svg_tag("Rectangle 7.svg", size: '400  * 400') %>
+
+            <%= inline_svg_tag("hamster 1.svg", size: '30% * 30%', class: "absolute") %>
+        </div>
+        <div class="col-md-6 ">
+            <h3>Qualidade</h3>
+            <p>
+                Produtos pensados para a melhor saúde do seu roedor, idealizado por amantes dos mais lindos roedores dos Andes
+            </p>
+        </div>
+    </div>
+
+    <div class="text-align-center">
+        <%= link_to "Clique aqui para conhecer nossos produtos", products_path, class: "call-to-action" %>
+    </div>
+
+
+    <footer>
+        <div class="container my-5 container-footer">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Contato</h2>
+                    <br />
+                    <br />
+                    Email: chinchilla@chinchill.com.br
+                    <br />
+                    Telefone: (00) 0000-0000
+                    <br />
+                    ESTE PRODUTO É FICTÍCIO, APENAS UM TESTE DE SITE
+                </div>
+
+                <div class="col-md-6">
+                    <%= inline_svg_tag("guinea-pig 1.svg", size: '70% * 70%') %>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+<% end %>

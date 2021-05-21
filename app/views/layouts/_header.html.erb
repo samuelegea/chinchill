@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark navbar-static-top navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        
+        <%= link_to "ChinChill", root_path, class: 'navbar-brand' %>
+        <button type="button" 
+                class="navbar-toggler collapsed" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#options"
+                aria-controls="options"
+                aria-expanded="false"> 
+                <span class="navbar-toggler-icon"></span>
+        </button> 
+        <div class="collapse navbar-collapse " id="options">
+            <div class="text-light nav navbar-nav ms-auto">
+                <%= link_to "Home", root_path, class: 'mx-1 nav-link' %>
+                <%= link_to "Contato", root_path, class: 'mx-1 nav-link' %>
+                <%= link_to "Sobre", root_path, class: 'mx-1 nav-link' %>
+                <%= link_to "Produtos", products_path, class: 'mx-1 nav-link' %>
+            </div>
+           
+
+        </div>
+    </div>
+</nav>
