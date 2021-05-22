@@ -1,16 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<div class="container bg-light rounded-3 p-3 my-4">
+<h2>Produtos</h2>
 
-<table>
+<table class="table d-none d-md-table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th colspan = "2">Nutritional information</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Preço</th>
+      <th scope="col"></th>
       <% if !@current_user.nil? %>
-        <th colspan = "3"></th>
+        <th colspan = "2"></th>
       <% end %>
     </tr>
   </thead>
@@ -19,24 +20,42 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.price %></td>
-        <td>
-          
-        </td>
-        <td>
-          
-        </td>
+        <td class="description-col"><%= product.description %></td>
+        <td><%= "R$#{product.price/100.00}" %></td>
+        <td><%= link_to 'Ver Produto', product, class: 'btn btn-success' %></td>
+
         <% if !@current_user.nil? %>
-          <td><%= link_to 'Show', product %></td>
-          <td><%= link_to 'Edit', edit_product_path(product) %></td>
-          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning' %></td>
+          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<div class="list-group d-md-none">
 
-<%= link_to 'New Product', new_product_path %>
+    
+    <% @products.each do |product| %>
+      <%= link_to product, class:"list-group-item list-group-item-action my-2" do %>
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1"><%= product.name %></h5>
+          <small class="text-muted"><%= "R$#{product.price/100.0}" %></small>
+        </div>
+          <p class="mb-1"><%= product.description %></p>
+
+          <%= link_to 'Ver Produto', product, class: 'btn btn-success' %>
+
+        <% if !@current_user.nil? %>
+          <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning' %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <% end %>
+      <% end %>
+    <% end %>
+    
+    <% if !@current_user.nil? %>
+      <%= link_to 'New Product', new_product_path, class:'btn btn-primary' %>
+    <% end %>
+</div>
+
+
