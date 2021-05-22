@@ -1,3 +1,24 @@
+# Desafio JR
+
+Primeiramente, que desafio hein?
+Foi muito legal desenvolver esse projeto, apesar de ainda achar que pode melhorar, aqui estão as features do teste.
+
+lembrando, upei em produção pra gente poder ver se funciona, está nesse link aqui
+
+-[chinchill](https://chinchill-gourmet.herokuapp.com/)
+
+Não adicionei links para os usuários admins nem misturei as sessões ou os modelos de usuário
+Usei o Active Admin e o Devise, criando dois modelos diferentes de usuários, retirando as rotas de cadastro de usuário para eles só poderem ser criados via seed ou por outros usuários admin.
+Usei bootstrap pra fazer o frontend, apesar de ser bem simples, ainda precisaria ter alteração e ajustes em alguns estilos pra ficar bem responsivo.
+Bom ponto, prestar atenção na responsividade, tentei fazer o melhor possível, mas em algumas resoluções pode haver problemas ainda.
+
+O usuário Admin está marcado em db/seeds.rb, caso queira experimentar
+
+Lembrando que aqui estou utilizando o ruby 3.0.1 e rails 6.1.2.3
+
+No mais, git pull https://github.com/samuelegea/chinchill/, bundle, rake db:migrate:seed e rails s!
+
+
 # Desafio Dev. JR Portabilis SAS
 
 Primeiro, parabéns por chegar até aqui.
