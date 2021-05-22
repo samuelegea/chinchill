@@ -1,6 +1,9 @@
-<h1>Editing Product</h1>
+<div class="container  p-3 my-4 d-flex justify-content-center">
+  <div class="d-block bg-light rounded-3 p-5">
+<h1>Editar <%= @product.name %></h1>
 
 <%= render 'form', product: @product %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Produtos', products_path, class: "btn btn-secondary" %>
+ </div>
+</div>
