@@ -1,3 +1,11 @@
+<style>
+    #sign-out{
+        background-color: transparent!important;
+        border: none;
+    }
+</style>
+
+
 <nav class="navbar navbar-dark navbar-static-top navbar-expand-md navbar-dark bg-dark">
     <div class="container">
         
@@ -13,9 +21,15 @@
         <div class="collapse navbar-collapse " id="options">
             <div class="text-light nav navbar-nav ms-auto">
                 <%= link_to "Home", root_path, class: 'mx-1 nav-link' %>
-                <%= link_to "Contato", root_path, class: 'mx-1 nav-link' %>
-                <%= link_to "Sobre", root_path, class: 'mx-1 nav-link' %>
                 <%= link_to "Produtos", products_path, class: 'mx-1 nav-link' %>
+                <%= link_to "Sobre", root_path, class: 'mx-1 nav-link' %>
+                
+                <% if @current_user %>
+                    <%= button_to "Sair", destroy_user_session_path, id: "sign-out", method: :delete, data: { confirm: 'Tem certeza que deseja sair?' }, class: 'mx-1 nav-link' %>
+                <% else %>
+                    <%= link_to "Login", new_user_session_path, class: 'mx-1 nav-link' %>
+                <% end %>
+                
             </div>
            
 
